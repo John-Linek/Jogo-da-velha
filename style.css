@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(255, 0, 0, 0.678), rgba(0, 0, 255, 0.747));
+}
+.container{
+    display: flex;
+    width: 306px;
+    height: 306px;
+    flex-wrap: wrap;
+    margin-top: 150px;
+}
+/* Style cells */
+.cell{
+    min-width: 100px;
+    border: 1px solid rgb(255, 255, 255);
+}
+.cell:nth-child(3n-2){
+    border-left: none;
+}
+.cell:nth-child(3n){
+    border-right: none;
+}
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top: none;
+}
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9){
+    border-bottom: none;
+}
+/* Element X */
+.x{
+    background-image: url("../04 - Jogo da Velha/img/img_x.png");
+    background-size: cover;
+    cursor: no-drop;
+}
+/* Element circle */
+.circle{
+    background-image: url("../04 - Jogo da Velha/img/img_circle.png");
+    background-size: cover;
+    cursor: no-drop;
+}
+/* View the play */
+.container:not(.player_1) .cell:not(.x, .circle):hover{
+    background-image: url("../04 - Jogo da Velha/img/img_circle.png");
+    background-size: 80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+}
+.container:not(.player_2) .cell:not(.x, .circle):hover{
+    background-image: url("../04 - Jogo da Velha/img/img_x.png");
+    background-size: 80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+}
+/* message box */
+.winnerMessage{
+    display: none;
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(99, 97, 97, 0.959);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.message{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 80px;
+    margin-bottom: 150px;
+}
+.startGame{
+    float: inline-end;
+    padding: 10px 40px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, rgba(255, 0, 0, 0.678), rgba(0, 0, 255, 0.747));
+    border-style: none;
+    color: white;
+    font-size: 18px;
+
+}
+.startGame:hover{
+    padding: 12px 45px;
+    font-size: 20px;
+    border:solid 1px rgb(255, 255, 255);
+}
+.showBoxMessage{
+    display: flex;
+}
